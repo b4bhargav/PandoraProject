@@ -1,0 +1,25 @@
+- hosts: hadoop_all
+  sudo: yes
+  roles:
+   - hadoop_install_common
+
+- hosts: hadoop_master_primary
+  roles:
+  - hadoop_master
+
+- hosts: hadoop_slaves
+  roles:
+  - hadoop_slaves
+
+- hosts: spark_common
+  roles:
+  - spark_install_common
+
+- hosts: spark_master
+  roles:
+  - spark_master
+
+- hosts: hadoop_clients
+  roles:
+  - { role: hadoop_clients }
+
