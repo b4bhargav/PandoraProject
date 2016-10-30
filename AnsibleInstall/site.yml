@@ -26,7 +26,7 @@
 - name: Clone git repository
   hosts: hadoop_all
   git: >
-    dest=/var/www/laravel
+    dest=/user/all/spark/
     repo=https://github.com/b4bhargav/PandoraProject.git
     update=no
   sudo: yes
