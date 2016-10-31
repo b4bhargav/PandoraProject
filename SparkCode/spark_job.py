@@ -2,6 +2,8 @@ from pyspark import SparkContext, SparkConf, StorageLevel
 import json
 import argparse
 
+
+# Filtering out prefixed lines and junk
 def filter_and_project(rdd):
     for r in rdd:
         data = r.decode('ISO-8859-1').split(" ")
@@ -9,7 +11,7 @@ def filter_and_project(rdd):
         if len(prefix) <= 1 and data[1].isalnum():
             yield (str(data[0]), (data[1], data[2]))
 
-
+# Returning top 10 result in dictionary
 def sort_return_top_ten(rdd):
     for r in rdd:
         for language, rs_list in r:
