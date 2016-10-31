@@ -12,12 +12,12 @@ We can use linux piping along with curl to pipe the data into HDFS. Below is the
 
 ##  Processing Framework:
 
-I have used Spark as data processing framework. File spark_job.py is pysprak scirpt which loads the input file into rdd and outputs
+I have used Spark as data processing framework. File spark/spark_job.py is pysprak scirpt which loads the input file into rdd and outputs
 top 10 pages by language.
 
 Below is the spark command to run the spark Job.
 
-`/user/spark/latest/bin/spark-submiy
+`/user/spark/latest/bin/spark-submit
 --master yarn-client --deploy-mode client
 --py-files /user/all/spark/SparkCode/spark_job.py
 --i_input_path /user/bhargav/pagecounts-20120101-000000.gz
